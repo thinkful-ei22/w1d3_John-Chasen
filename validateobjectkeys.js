@@ -18,10 +18,19 @@ const objectB = {
     const includes = function(key){
       return objectKeys.includes(key);
     }
-    return objectKeys.length === expectedKeys.length ? expectedKeys.every(includes) : false
-  } 
+    let expectedKeysSorted = expectedKeys.sort();
+    let ObjectSorted = Object.keys(object).sort();
+    let matching = true;
+
+    for( i= 0; i< expectedKeysSorted.length; i++){
+        if (expectedKeysSorted[i] !== ObjectSorted[i]){
+            matching = false;
+        }
+    }
+    return matching;
+}
 
 
-  
+console.log(validateKeys(objectB, expectedKeys));  
     
-console.log(validateKeys(objectB, expectedKeys));
+    
