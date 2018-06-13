@@ -4,10 +4,8 @@ const objectA = {
     age: 34,
     city: 'Chicago',
   };
-  
-  // running the function with `objectB` and `expectedKeys`
-  // should return `false`
-  const objectB = {
+
+const objectB = {
     id: 3,
     age: 33,
     city: 'Peoria',
@@ -16,11 +14,14 @@ const objectA = {
   const expectedKeys = ['id', 'name', 'age', 'city'];
   
   function validateKeys(object, expectedKeys) {
-    let sortedObject = Object.keys(object);
-    sortedObject.forEach(key => 
-      sortedObject.includes(key) ? true : false
-    );
+    const objectKeys = Object.keys(object);
+    const includes = function(key){
+      return objectKeys.includes(key);
+    }
+    return objectKeys.length === expectedKeys.length ? expectedKeys.every(includes) : false
   } 
+
+
   
     
-console.log(validateKeys(objectA, expectedKeys));
+console.log(validateKeys(objectB, expectedKeys));
