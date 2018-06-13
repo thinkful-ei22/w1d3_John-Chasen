@@ -1,0 +1,7 @@
+let myObject = {
+  foo:23,
+  bar:'Michael Jordan',
+  fum:'Chicago Bulls',
+  quux:45,
+  spam:'yummy'
+};
