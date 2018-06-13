@@ -16,12 +16,11 @@ const objectA = {
   const expectedKeys = ['id', 'name', 'age', 'city'];
   
   function validateKeys(object, expectedKeys) {
-    if (expectedKeys.length !== Object.keys(object).length){
-      return false;
-    }
-    let expectedKeySorted = expectedKeys.sort();
-    let ObjectSorted = Object.keys(object).sort();
+    let sortedObject = Object.keys(object);
+    sortedObject.forEach(key => 
+      sortedObject.includes(key) ? true : false
+    );
   } 
   
     
-    console.log(Object.keys(object));
+console.log(validateKeys(objectA, expectedKeys));
