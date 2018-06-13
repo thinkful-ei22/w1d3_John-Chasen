@@ -11,24 +11,15 @@ const objectB = {
     city: 'Peoria',
   };
   
-  const expectedKeys = ['id', 'name', 'age', 'city'];
-  
+const expectedKeys = ['id', 'name', 'age', 'city'];
+    
   function validateKeys(object, expectedKeys) {
     const objectKeys = Object.keys(object);
     const includes = function(key){
       return objectKeys.includes(key);
     }
-    let expectedKeysSorted = expectedKeys.sort();
-    let ObjectSorted = Object.keys(object).sort();
-    let matching = true;
-
-    for( i= 0; i< expectedKeysSorted.length; i++){
-        if (expectedKeysSorted[i] !== ObjectSorted[i]){
-            matching = false;
-        }
-    }
-    return matching;
-}
+    return objectKeys.length === expectedKeys.length ? expectedKeys.every(includes) : false
+  } 
 
 
 console.log(validateKeys(objectB, expectedKeys));  
