@@ -8,15 +8,15 @@ const cipher = {
 };
 
 let wordArray = words.split(' ');
-console.log(wordArray); /// prints array of each word in a string ///
 
 let decodedArray = wordArray.map(word => {
+	let index = cipher[word[0]] - 1;
     if(cipher[word[0]]){
-        return word[cipher[word[0]-1]];
+    	return word[index];
+        //return word[cipher][word][0]-1;
     }else{
-        ' ';
+        return ' ';
     }
-})
+});
 
-
-console.log(decodedArray);
+console.log(decodedArray.join(''));
