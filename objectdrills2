@@ -5,3 +5,7 @@ let myObject = {
   quux:1,
   spam:'10'
 };
+
+for (let key in myObject){
+   console.log(`${key} : ${myObject[key]}`);
+}
