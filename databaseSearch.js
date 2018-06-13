@@ -10,10 +10,18 @@ const HEROES = [
 //arr = hero
 //query = key-value pair
 function findOne(arr, query){
-	arr.forEach(hero =>
-		console.log(hero.includes(query))
-	)
+	const queryType = Object.keys(query).toString();
+	const queryValue = query[queryType];
+	console.log("Query type: " + queryType);
+	console.log("Query value: " + queryValue);
+	for(hero of arr){
+		console.log(hero[queryType] === queryValue);
+	}
+
 }
+
+
+
 findOne(HEROES, { id: 1 });
 // => { id: 1, name: 'Captain America', squad: 'Avengers' }
 
